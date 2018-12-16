@@ -37,3 +37,10 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# rbenvの設定
+set :rbenv_type, :system
+set :rbenv_path, '/usr/local/rbenv'
+set :rbenv_ruby, File.read('.ruby-version').strip
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w[rake gem bundle ruby rails]
