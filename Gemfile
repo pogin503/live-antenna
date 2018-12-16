@@ -52,7 +52,7 @@ group :development do
   gem "capistrano-rails", "~> 1.4", require: false
   gem 'capistrano-bundler', '~> 1.4'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-rbenv-vars', '~> 0.1'
+  gem 'capistrano3-puma'
 end
 
 group :test do
